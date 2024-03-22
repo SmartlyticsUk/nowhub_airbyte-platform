@@ -35,7 +35,6 @@ export const SideBar: React.FC<PropsWithChildren<SideBarProps>> = ({
   const { formatMessage } = useIntl();
   return (
     <nav className={classNames(styles.sidebar)}>
-      <AirbyteHomeLink />
       <IfFeatureEnabled feature={FeatureItem.ShowAdminWarningInWorkspace}>
         <AdminWorkspaceWarning />
       </IfFeatureEnabled>
@@ -62,13 +61,6 @@ export const SideBar: React.FC<PropsWithChildren<SideBarProps>> = ({
             testId="destinationsLink"
             to={RoutePaths.Destination}
           />
-          <NavItem
-            label={<FormattedMessage id="sidebar.builder" />}
-            icon="wrench"
-            testId="builderLink"
-            to={RoutePaths.ConnectorBuilder}
-            withBadge="beta"
-          />
           <IfFeatureEnabled feature={FeatureItem.Billing}>
             <NavItem
               icon="credits"
@@ -77,12 +69,6 @@ export const SideBar: React.FC<PropsWithChildren<SideBarProps>> = ({
               testId="creditsButton"
             />
           </IfFeatureEnabled>
-          <NavItem
-            label={<FormattedMessage id="sidebar.settings" />}
-            icon="gear"
-            to={RoutePaths.Settings}
-            withNotification={settingHighlight}
-          />
         </MenuContent>
         <MenuContent>
           {bottomSlot}

@@ -22,7 +22,6 @@ const MainView: React.FC<React.PropsWithChildren> = (props) => {
     <FlexContainer className={classNames(styles.mainViewContainer)} gap="none">
       <SideBar
         workspaceFetcher={useListWorkspacesInfinite}
-        bottomSlot={<HelpDropdown />}
         settingHighlight={hasNewVersions}
       />
       <div className={styles.content}>
