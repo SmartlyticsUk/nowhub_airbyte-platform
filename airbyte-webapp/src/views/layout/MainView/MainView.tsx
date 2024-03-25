@@ -11,7 +11,7 @@ import { ResourceNotFoundErrorBoundary } from "views/common/ResourceNotFoundErro
 import { StartOverErrorView } from "views/common/StartOverErrorView";
 
 import styles from "./MainView.module.scss";
-import { HelpDropdown } from "../SideBar/components/HelpDropdown";
+// import { HelpDropdown } from "../SideBar/components/HelpDropdown";
 import { SideBar } from "../SideBar/SideBar";
 
 const MainView: React.FC<React.PropsWithChildren> = (props) => {
@@ -20,10 +20,7 @@ const MainView: React.FC<React.PropsWithChildren> = (props) => {
 
   return (
     <FlexContainer className={classNames(styles.mainViewContainer)} gap="none">
-      <SideBar
-        workspaceFetcher={useListWorkspacesInfinite}
-        settingHighlight={hasNewVersions}
-      />
+      <SideBar workspaceFetcher={useListWorkspacesInfinite} settingHighlight={hasNewVersions} />
       <div className={styles.content}>
         <ResourceNotFoundErrorBoundary errorComponent={<StartOverErrorView />} trackError={trackError}>
           <React.Suspense fallback={<LoadingPage />}>{props.children}</React.Suspense>

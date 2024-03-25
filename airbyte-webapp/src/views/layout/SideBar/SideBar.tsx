@@ -14,7 +14,7 @@ import { FeatureItem, IfFeatureEnabled } from "core/services/features";
 import { CloudRoutes } from "packages/cloud/cloudRoutePaths";
 import { RoutePaths } from "pages/routePaths";
 
-import { AirbyteHomeLink } from "./AirbyteHomeLink";
+// import { AirbyteHomeLink } from "./AirbyteHomeLink";
 import { MenuContent } from "./components/MenuContent";
 import { NavDropdown } from "./components/NavDropdown";
 import { NavItem } from "./components/NavItem";
@@ -29,7 +29,7 @@ interface SideBarProps {
 export const SideBar: React.FC<PropsWithChildren<SideBarProps>> = ({
   workspaceFetcher,
   bottomSlot,
-  settingHighlight,
+  // settingHighlight,
 }) => {
   const { logout, user } = useAuthService();
   const { formatMessage } = useIntl();
