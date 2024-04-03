@@ -11,7 +11,6 @@ import { ResourceNotFoundErrorBoundary } from "views/common/ResourceNotFoundErro
 import { StartOverErrorView } from "views/common/StartOverErrorView";
 
 import styles from "./MainView.module.scss";
-// import { HelpDropdown } from "../SideBar/components/HelpDropdown";
 import { SideBar } from "../SideBar/SideBar";
 
 const MainView: React.FC<React.PropsWithChildren> = (props) => {

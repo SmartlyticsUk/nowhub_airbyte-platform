@@ -5,7 +5,6 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { AdminWorkspaceWarning } from "components/ui/AdminWorkspaceWarning";
 import { FlexContainer } from "components/ui/Flex";
 import { Icon } from "components/ui/Icon";
-import { ThemeToggle } from "components/ui/ThemeToggle";
 import { WorkspacesPicker } from "components/workspace/WorkspacesPicker";
 import type { WorkspaceFetcher } from "components/workspace/WorkspacesPickerList";
 
@@ -14,7 +13,6 @@ import { FeatureItem, IfFeatureEnabled } from "core/services/features";
 import { CloudRoutes } from "packages/cloud/cloudRoutePaths";
 import { RoutePaths } from "pages/routePaths";
 
-// import { AirbyteHomeLink } from "./AirbyteHomeLink";
 import { MenuContent } from "./components/MenuContent";
 import { NavDropdown } from "./components/NavDropdown";
 import { NavItem } from "./components/NavItem";
@@ -26,11 +24,7 @@ interface SideBarProps {
   settingHighlight?: boolean;
 }
 
-export const SideBar: React.FC<PropsWithChildren<SideBarProps>> = ({
-  workspaceFetcher,
-  bottomSlot,
-  // settingHighlight,
-}) => {
+export const SideBar: React.FC<PropsWithChildren<SideBarProps>> = ({ workspaceFetcher, bottomSlot }) => {
   const { logout, user } = useAuthService();
   const { formatMessage } = useIntl();
   return (
@@ -72,7 +66,6 @@ export const SideBar: React.FC<PropsWithChildren<SideBarProps>> = ({
         </MenuContent>
         <MenuContent>
           {bottomSlot}
-          <ThemeToggle />
           {logout && user && (
             <NavDropdown
               buttonTestId="sidebar.userDropdown"
