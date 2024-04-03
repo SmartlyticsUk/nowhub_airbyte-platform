@@ -61,7 +61,7 @@ const Services: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
 const App: React.FC = () => {
   return (
     <React.StrictMode>
-      <AirbyteThemeProvider>
+      <AirbyteThemeProvider themeOverride="airbyteThemeLight">
         <I18nProvider locale="en" messages={en}>
           <QueryProvider>
             <BlockerService>
